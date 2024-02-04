@@ -195,7 +195,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 exec --no-startup-id feh --bg-scale ~/Documents/Wallpapers/1.jpeg
 exec --no-startup-id blueman-applet
-exec_always "setxkbmap -model pc104 -layout us,ru,ua -variant ,, -option grp:alt_shift_toggle"
+exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:alt_shift_toggle"
 exec_always xinput --set-prop "13" "libinput Accel Speed" -0.6
 exec_always xinput --set-prop "9" "libinput Accel Speed" -0.5
+exec_always xinput set-prop 12 187 0
+
 exec_always xset -b
