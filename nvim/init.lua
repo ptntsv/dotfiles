@@ -181,6 +181,9 @@ keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', remap_opts)
 keymap('n', '<C-k>', ':lua vim.lsp.buf.signature_help()<cr>', remap_opts)
 keymap('n','<leader>rn', ':lua vim.lsp.buf.rename()<cr>',remap_opts)
 
+keymap('n','ge', '$',remap_opts)
+keymap('n','gs', '^',remap_opts)
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
