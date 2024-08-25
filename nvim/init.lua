@@ -109,7 +109,7 @@ require('telescope').setup {
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lspconfig").pyright.setup {}
-require("lspconfig").lua_ls.setup {}
+-- require("lspconfig").lua_ls.setup {}
 require("lspconfig").asm_lsp.setup {}
 require("lspconfig").clangd.setup {}
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -200,6 +200,7 @@ local remap_opts = { noremap = true, silent = true }
 local builtin = require('telescope.builtin')
 
 keymap('n', 'd[', ':lua vim.diagnostic.goto_next()<cr>', remap_opts)
+keymap('n', 'd[', ':lua vim.diagnostic.goto_next()<cr>', remap_opts)
 keymap('n', '[d', ':lua vim.diagnostic.goto_prev()<cr>', remap_opts)
 keymap('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', remap_opts)
 keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', remap_opts)
@@ -210,9 +211,26 @@ keymap('n', '<C-M-L>', ':lua vim.lsp.buf.format({async=false})<cr>', remap_opts)
 keymap('n', 'ge', '$', remap_opts)
 keymap('n', 'gs', '^', remap_opts)
 
+keymap('t', '<Esc>', '<C-\\><C-n>', remap_opts)
+keymap('t', '<A-l>', '<C-\\><C-n><C-w>l', remap_opts)
+keymap('t', '<A-h>', '<C-\\><C-n><C-w>h', remap_opts)
+keymap('t', '<A-j>', '<C-\\><C-n><C-w>j', remap_opts)
+keymap('t', '<A-k>', '<C-\\><C-n><C-w>k', remap_opts)
+
+keymap('i', '<A-l>', '<C-\\><C-n><C-w>l', remap_opts)
+keymap('i', '<A-h>', '<C-\\><C-n><C-w>h', remap_opts)
+keymap('i', '<A-j>', '<C-\\><C-n><C-w>j', remap_opts)
+keymap('i', '<A-k>', '<C-\\><C-n><C-w>k', remap_opts)
+
+keymap('n', '<A-l>', '<C-w>l', remap_opts)
+keymap('n', '<A-h>', '<C-w>h', remap_opts)
+keymap('n', '<A-j>', '<C-w>j', remap_opts)
+keymap('n', '<A-k>', '<C-w>k', remap_opts)
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+--
 -- Default options
 require("modus-themes").setup({
 	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
@@ -241,4 +259,4 @@ require("modus-themes").setup({
 	---@param colors ColorScheme
 	on_highlights = function(highlights, colors) end,
 })
-vim.cmd.colorscheme("dracula")
+-- vim.cmd.colorscheme("dracula")
