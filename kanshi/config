@@ -1,0 +1,21 @@
+output "AOC 27G4 2O5R5HA009098" {
+	mode 1920x1080@120.00
+	position 0,0
+	scale 1
+	alias $AOC
+}
+output "AU Optronics 0x323D Unknown" {
+	mode 1920x1080@60.00
+	position 0,0
+	scale 1.3
+	alias $LAPTOP
+}
+
+profile {
+	output $LAPTOP disable
+	output $AOC enable
+}
+
+profile {
+	output $LAPTOP enable
+}
