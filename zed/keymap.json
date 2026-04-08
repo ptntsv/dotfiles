@@ -1,0 +1,91 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finderFirst"vim::FirstNonWhitespace"Toggle"
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "g l": "vim::EndOfLine",
+      "g s": "vim::FirstNonWhitespace",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "alt-;": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-;": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // Traditional Vim behavior
+      "q": "vim::AnyQuotes",
+      "b": "vim::AnyBrackets",
+    },
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+    },
+  },
+  {
+    "unbind": {
+      "f7": "debugger::StepOver"
+    }
+  },
+  {
+    "bindings": {
+      "f7": "debugger::StepInto"
+    }
+  },
+  {
+    "unbind": {
+      "ctrl-f11": "debugger::StepInto"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift-f5": "debugger::Rerun"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "f5": "debugger::Rerun"
+    }
+  },
+  {
+    "bindings": {
+      "f5": "debugger::Stop"
+    }
+  },
+  {
+    "unbind": {
+      "shift-f5": "debugger::Stop"
+    }
+  },
+  {
+    "bindings": {
+      "f8": "debugger::StepOver"
+    }
+  }
+]
